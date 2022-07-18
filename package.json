@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@chakra-ui/core": "^0.8.0",
@@ -34,7 +36,9 @@
     "@types/react": "^18.0.14",
     "eslint": "8.18.0",
     "eslint-config-next": "12.2.0",
+    "gh-pages": "^4.0.0",
     "miragejs": "^0.1.45",
     "typescript": "^4.7.4"
-  }
+  },
+  "homepage": "https://inanbruneli.github.io/dashgo"
 }
