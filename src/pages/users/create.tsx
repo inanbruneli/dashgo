@@ -1,6 +1,6 @@
 import { Box, Button, Divider, Flex, Heading, HStack, SimpleGrid, VStack } from "@chakra-ui/react";
 import Link from "next/link";
-import { SubmitErrorHandler, SubmitHandler, useForm } from 'react-hook-form';
+import { FieldError, SubmitErrorHandler, SubmitHandler, useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { Input } from "../../components/form/input";
 import { Header } from "../../components/Header";
@@ -16,6 +16,13 @@ type CreateUserFormData = {
   email: string;
   password: string;
   password_confirmation: string;
+}
+
+type TypeFieldError = {
+  nome?: FieldError;
+  email?: FieldError;
+  password?: FieldError;
+  password_confirmation?: FieldError;
 }
 
 //regras de validação criadas pelo yup
@@ -49,7 +56,7 @@ export default function CreateUser() {
   });
   const { errors } = formState;
 
-  const handleCreateUser: SubmitErrorHandler<CreateUserFormData> = async (values) => {
+  const handleCreateUser = async (values) => {
     await createUser.mutateAsync(values);
 
     router.push('/users')
