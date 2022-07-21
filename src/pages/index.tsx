@@ -29,11 +29,10 @@ export default function Home() {
   return (
     <Flex w='100vw' h='100vh' overflow='hidden'>
 
-      <Flex w='50%' h='100%' >
+      <Flex w='50%' h='100%' justifyContent='center' alignItems='center' >
         <Image
-          src='https://inanbruneli.github.io/dashgo/src/images/undraw.svg'
-          boxSize='100%'
-          objectFit='cover'
+          src='https://inanbruneli.github.io/Parallax/imagens/un (6).svg'
+          boxSize={'50%'}
         ></Image>
       </Flex>
 
