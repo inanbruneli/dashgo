@@ -754,7 +754,6 @@ export default function Dashboard() {
         }
       }
     }
-
   }
 
   const [state, setState] = useState(data.Janeiro);
@@ -762,15 +761,20 @@ export default function Dashboard() {
   const [currentCompetencia, setCurrentCompetencia] = useState('Janeiro');
 
   function onCompetenciaChange(comp) {
-    const newData = {
+    const newBarOptions: ApexOptions = data[comp].barOptions;
+    const newLineOptions: ApexOptions = data[comp].lineOptions;
+    const newTreemapOptions: ApexOptions = data[comp].treemapOptions;
+    const newtimelineOptions: ApexOptions = data[comp].timelineOptions;
+
+    let newData = {
       bar: data[comp].bar,
-      barOptions: data[comp].barOptions,
+      barOptions: newBarOptions,
       line: data[comp].line,
-      lineOptions: data[comp].lineOptions,
+      lineOptions: newLineOptions,
       treemap: data[comp].treemap,
-      treemapOptions: data[comp].treemapOptions,
+      treemapOptions: newTreemapOptions,
       timeline: data[comp].timeline,
-      timelineOptions: data[comp].timelineOptions,
+      timelineOptions: newtimelineOptions,
     }
     setState(newData);
     setCurrentCompetencia(comp)
