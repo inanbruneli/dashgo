@@ -768,13 +768,13 @@ export default function Dashboard() {
 
     let newData = {
       bar: data[comp].bar,
-      barOptions: newBarOptions,
+      barOptions: data[comp].barOptions<ApexOptions>,
       line: data[comp].line,
-      lineOptions: newLineOptions,
+      lineOptions: data[comp].lineOptions<ApexOptions>,
       treemap: data[comp].treemap,
-      treemapOptions: newTreemapOptions,
+      treemapOptions: data[comp].treemapOptions<ApexOptions>,
       timeline: data[comp].timeline,
-      timelineOptions: newtimelineOptions,
+      timelineOptions: data[comp].timelineOptions<ApexOptions>,
     }
     setState(newData);
     setCurrentCompetencia(comp)
