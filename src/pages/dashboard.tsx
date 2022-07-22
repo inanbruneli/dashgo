@@ -9,57 +9,59 @@ import { ButtonComp } from "../components/ButtonComp";
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false });
 
 export default function Dashboard() {
+  const barOptionsApex: ApexOptions = {
+    chart: {
+      toolbar: {
+        show: false
+      },
+      zoom: {
+        enabled: false
+      },
+      foreColor: theme.colors.gray[500]
+    },
+    grid: {
+      show: false
+    },
+    dataLabels: {
+      enabled: false
+    },
+    tooltip: {
+      enabled: false
+    },
+    xaxis: {
+      type: 'datetime',
+      axisBorder: {
+        color: theme.colors.gray[600]
+      },
+      axisTicks: {
+        color: theme.colors.gray[500]
+      },
+      categories: [
+        '2021-01-18T00:00:00.0000Z',
+        '2021-01-18T00:00:00.0000Z',
+        '2021-01-20T00:00:00.0000Z',
+        '2021-01-21T00:00:00.0000Z',
+        '2021-01-22T00:00:00.0000Z',
+        '2021-01-23T00:00:00.0000Z',
+        '2021-01-24T00:00:00.0000Z',
+        '2021-01-24T00:00:00.0000Z',
+      ]
+    },
+    fill: {
+      opacity: 0.3,
+      type: 'gradient',
+      gradient: {
+        shade: 'dark',
+        opacityFrom: 0.7,
+        opacityTo: 0.3
+      }
+    }
+  }
+
   const data = {
     Janeiro: {
       bar: [{ name: 'series1', data: [1000, 4003, 1002, 3551, 7000, 1338, 2234] }],
-      barOptions: {
-        chart: {
-          toolbar: {
-            show: false
-          },
-          zoom: {
-            enabled: false
-          },
-          foreColor: theme.colors.gray[500]
-        },
-        grid: {
-          show: false
-        },
-        dataLabels: {
-          enabled: false
-        },
-        tooltip: {
-          enabled: false
-        },
-        xaxis: {
-          type: 'datetime',
-          axisBorder: {
-            color: theme.colors.gray[600]
-          },
-          axisTicks: {
-            color: theme.colors.gray[500]
-          },
-          categories: [
-            '2021-01-18T00:00:00.0000Z',
-            '2021-01-18T00:00:00.0000Z',
-            '2021-01-20T00:00:00.0000Z',
-            '2021-01-21T00:00:00.0000Z',
-            '2021-01-22T00:00:00.0000Z',
-            '2021-01-23T00:00:00.0000Z',
-            '2021-01-24T00:00:00.0000Z',
-            '2021-01-24T00:00:00.0000Z',
-          ]
-        },
-        fill: {
-          opacity: 0.3,
-          type: 'gradient',
-          gradient: {
-            shade: 'dark',
-            opacityFrom: 0.7,
-            opacityTo: 0.3
-          }
-        }
-      },
+      barOptions: barOptionsApex,
       line: [
         {
           name: 'Backend',
@@ -259,54 +261,7 @@ export default function Dashboard() {
     },
     Fevereiro: {
       bar: [{ name: 'series1', data: [131, 221, 1231, 13131, 2312, 3455, 3331] }],
-      barOptions: {
-        chart: {
-          toolbar: {
-            show: false
-          },
-          zoom: {
-            enabled: false
-          },
-          foreColor: theme.colors.gray[500]
-        },
-        grid: {
-          show: false
-        },
-        dataLabels: {
-          enabled: false
-        },
-        tooltip: {
-          enabled: false
-        },
-        xaxis: {
-          type: 'datetime',
-          axisBorder: {
-            color: theme.colors.gray[600]
-          },
-          axisTicks: {
-            color: theme.colors.gray[500]
-          },
-          categories: [
-            '2021-02-02T00:00:00.0000Z',
-            '2021-02-05T00:00:00.0000Z',
-            '2021-02-06T00:00:00.0000Z',
-            '2021-02-07T00:00:00.0000Z',
-            '2021-02-09T00:00:00.0000Z',
-            '2021-02-10T00:00:00.0000Z',
-            '2021-02-12T00:00:00.0000Z',
-            '2021-02-13T00:00:00.0000Z',
-          ]
-        },
-        fill: {
-          opacity: 0.3,
-          type: 'gradient',
-          gradient: {
-            shade: 'dark',
-            opacityFrom: 0.7,
-            opacityTo: 0.3
-          }
-        }
-      },
+      barOptions: barOptionsApex,
       line: [
         {
           name: 'Backend',
@@ -507,54 +462,7 @@ export default function Dashboard() {
     },
     Março: {
       bar: [{ name: 'series1', data: [200, 180, 151, 450, 480, 250, 750] }],
-      barOptions: {
-        chart: {
-          toolbar: {
-            show: false
-          },
-          zoom: {
-            enabled: false
-          },
-          foreColor: theme.colors.gray[500]
-        },
-        grid: {
-          show: false
-        },
-        dataLabels: {
-          enabled: false
-        },
-        tooltip: {
-          enabled: false
-        },
-        xaxis: {
-          type: 'datetime',
-          axisBorder: {
-            color: theme.colors.gray[600]
-          },
-          axisTicks: {
-            color: theme.colors.gray[500]
-          },
-          categories: [
-            '2021-03-16T00:00:00.0000Z',
-            '2021-03-17T00:00:00.0000Z',
-            '2021-03-21T00:00:00.0000Z',
-            '2021-03-22T00:00:00.0000Z',
-            '2021-03-23T00:00:00.0000Z',
-            '2021-03-27T00:00:00.0000Z',
-            '2021-03-28T00:00:00.0000Z',
-            '2021-03-29T00:00:00.0000Z',
-          ]
-        },
-        fill: {
-          opacity: 0.3,
-          type: 'gradient',
-          gradient: {
-            shade: 'dark',
-            opacityFrom: 0.7,
-            opacityTo: 0.3
-          }
-        }
-      },
+      barOptions: barOptionsApex,
       line: [
         {
           name: 'Backend',
@@ -761,11 +669,6 @@ export default function Dashboard() {
   const [currentCompetencia, setCurrentCompetencia] = useState('Janeiro');
 
   function onCompetenciaChange(comp) {
-    const newBarOptions: ApexOptions = data[comp].barOptions;
-    const newLineOptions: ApexOptions = data[comp].lineOptions;
-    const newTreemapOptions: ApexOptions = data[comp].treemapOptions;
-    const newtimelineOptions: ApexOptions = data[comp].timelineOptions;
-
     let newData = {
       bar: data[comp].bar,
       barOptions: data[comp].barOptions<ApexOptions>,
