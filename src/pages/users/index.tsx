@@ -1,5 +1,4 @@
 import { Box, Button, Checkbox, Flex, Heading, Icon, Link, Spinner, Table, Tbody, Td, Text, Th, Thead, Tr, useBreakpointValue } from "@chakra-ui/react";
-import axios from "axios";
 import NextLink from "next/link";
 import { useState } from "react";
 import { RiAddLine, RiPencilLine } from "react-icons/ri";
@@ -21,7 +20,7 @@ export default function UserList() {
 
   async function handlePrefetchUser(userId: string) {
     await queryClient.prefetchQuery(['user', userId], async () => {
-      const response = await axios.get(`https://dashgo-inanbruneli.vercel.app/api/users/${userId}`);
+      const response = await api.get(`users/${userId}`);
 
       return response.data;
     }, {

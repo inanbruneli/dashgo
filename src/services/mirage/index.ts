@@ -8,7 +8,6 @@ type User = {
 }
 
 export function makeServer(){
-  console.log(faker.name)
   const server = createServer({
     serializers: {
       application: ActiveModelSerializer
