@@ -57,6 +57,99 @@ export default function Dashboard() {
       }
     }
   }
+  const lineOptionsApex: ApexOptions = {
+    chart: {
+      toolbar: {
+        show: false
+      },
+      zoom: {
+        enabled: false
+      },
+      foreColor: theme.colors.gray[500]
+    },
+    grid: {
+      show: false
+    },
+    dataLabels: {
+      enabled: false
+    },
+    tooltip: {
+      enabled: false
+    },
+    xaxis: {
+      type: 'datetime',
+      axisBorder: {
+        color: theme.colors.gray[600]
+      },
+      axisTicks: {
+        color: theme.colors.gray[500]
+      },
+      categories: [
+        '2021-03-07T00:00:00.0000Z',
+        '2021-03-09T00:00:00.0000Z',
+        '2021-03-12T00:00:00.0000Z',
+        '2021-03-13T00:00:00.0000Z',
+        '2021-03-14T00:00:00.0000Z',
+        '2021-03-15T00:00:00.0000Z',
+        '2021-03-16T00:00:00.0000Z',
+      ]
+    },
+    fill: {
+      opacity: 0.3,
+      type: 'gradient',
+      gradient: {
+        shade: 'dark',
+        opacityFrom: 0.7,
+        opacityTo: 0.3
+      }
+    }
+  }
+  const treemapOptionsApex: ApexOptions = {
+    legend: {
+      show: false
+    },
+    tooltip: {
+      enabled: false
+    },
+
+    chart: {
+      toolbar: {
+        show: false
+      },
+      zoom: {
+        enabled: false
+      },
+      foreColor: theme.colors.gray[500]
+    },
+
+  }
+  const timelioneOptions: ApexOptions = {
+    legend: {
+      show: false
+    },
+    tooltip: {
+      enabled: false
+    },
+
+    chart: {
+      toolbar: {
+        show: false
+      },
+      zoom: {
+        enabled: false
+      },
+      foreColor: theme.colors.gray[500]
+    },
+
+    plotOptions: {
+      bar: {
+        horizontal: true
+      }
+    },
+    xaxis: {
+      type: 'datetime'
+    }
+  }
 
   const data = {
     Janeiro: {
@@ -73,53 +166,7 @@ export default function Dashboard() {
           data: [55, 33, 45, 10, 43, 54, 33]
         }
       ],
-      lineOptions: {
-        chart: {
-          toolbar: {
-            show: false
-          },
-          zoom: {
-            enabled: false
-          },
-          foreColor: theme.colors.gray[500]
-        },
-        grid: {
-          show: false
-        },
-        dataLabels: {
-          enabled: false
-        },
-        tooltip: {
-          enabled: false
-        },
-        xaxis: {
-          type: 'datetime',
-          axisBorder: {
-            color: theme.colors.gray[600]
-          },
-          axisTicks: {
-            color: theme.colors.gray[500]
-          },
-          categories: [
-            '2021-01-17T00:00:00.0000Z',
-            '2021-01-18T00:00:00.0000Z',
-            '2021-01-20T00:00:00.0000Z',
-            '2021-01-21T00:00:00.0000Z',
-            '2021-01-22T00:00:00.0000Z',
-            '2021-01-23T00:00:00.0000Z',
-            '2021-01-24T00:00:00.0000Z',
-          ]
-        },
-        fill: {
-          opacity: 0.3,
-          type: 'gradient',
-          gradient: {
-            shade: 'dark',
-            opacityFrom: 0.7,
-            opacityTo: 0.3
-          }
-        }
-      },
+      lineOptions: lineOptionsApex,
       treemap: [
         {
           data: [
@@ -178,25 +225,7 @@ export default function Dashboard() {
           ]
         }
       ],
-      treemapOptions: {
-        legend: {
-          show: false
-        },
-        tooltip: {
-          enabled: false
-        },
-
-        chart: {
-          toolbar: {
-            show: false
-          },
-          zoom: {
-            enabled: false
-          },
-          foreColor: theme.colors.gray[500]
-        },
-
-      },
+      treemapOptions: treemapOptionsApex,
       timeline: [
         {
           data: [
@@ -231,33 +260,7 @@ export default function Dashboard() {
           ]
         }
       ],
-      timelineOptions: {
-        legend: {
-          show: false
-        },
-        tooltip: {
-          enabled: false
-        },
-
-        chart: {
-          toolbar: {
-            show: false
-          },
-          zoom: {
-            enabled: false
-          },
-          foreColor: theme.colors.gray[500]
-        },
-
-        plotOptions: {
-          bar: {
-            horizontal: true
-          }
-        },
-        xaxis: {
-          type: 'datetime'
-        }
-      }
+      timelineOptions: timelioneOptions
     },
     Fevereiro: {
       bar: [{ name: 'series1', data: [131, 221, 1231, 13131, 2312, 3455, 3331] }],
@@ -273,53 +276,7 @@ export default function Dashboard() {
           data: [33, 54, 32, 17, 18, 42, 65]
         }
       ],
-      lineOptions: {
-        chart: {
-          toolbar: {
-            show: false
-          },
-          zoom: {
-            enabled: false
-          },
-          foreColor: theme.colors.gray[500]
-        },
-        grid: {
-          show: false
-        },
-        dataLabels: {
-          enabled: false
-        },
-        tooltip: {
-          enabled: false
-        },
-        xaxis: {
-          type: 'datetime',
-          axisBorder: {
-            color: theme.colors.gray[600]
-          },
-          axisTicks: {
-            color: theme.colors.gray[500]
-          },
-          categories: [
-            '2021-02-01T00:00:00.0000Z',
-            '2021-02-02T00:00:00.0000Z',
-            '2021-02-03T00:00:00.0000Z',
-            '2021-02-04T00:00:00.0000Z',
-            '2021-02-05T00:00:00.0000Z',
-            '2021-02-06T00:00:00.0000Z',
-            '2021-02-07T00:00:00.0000Z',
-          ]
-        },
-        fill: {
-          opacity: 0.3,
-          type: 'gradient',
-          gradient: {
-            shade: 'dark',
-            opacityFrom: 0.7,
-            opacityTo: 0.3
-          }
-        }
-      },
+      lineOptions: lineOptionsApex,
       treemap: [
         {
           data: [
@@ -379,25 +336,7 @@ export default function Dashboard() {
           ]
         }
       ],
-      treemapOptions: {
-        legend: {
-          show: false
-        },
-        tooltip: {
-          enabled: false
-        },
-
-        chart: {
-          toolbar: {
-            show: false
-          },
-          zoom: {
-            enabled: false
-          },
-          foreColor: theme.colors.gray[500]
-        },
-
-      },
+      treemapOptions: treemapOptionsApex,
       timeline: [
         {
           data: [
@@ -432,33 +371,7 @@ export default function Dashboard() {
           ]
         }
       ],
-      timelineOptions: {
-        legend: {
-          show: false
-        },
-        tooltip: {
-          enabled: false
-        },
-
-        chart: {
-          toolbar: {
-            show: false
-          },
-          zoom: {
-            enabled: false
-          },
-          foreColor: theme.colors.gray[500]
-        },
-
-        plotOptions: {
-          bar: {
-            horizontal: true
-          }
-        },
-        xaxis: {
-          type: 'datetime'
-        }
-      }
+      timelineOptions: timelioneOptions
     },
     Março: {
       bar: [{ name: 'series1', data: [200, 180, 151, 450, 480, 250, 750] }],
@@ -474,53 +387,7 @@ export default function Dashboard() {
           data: [50, 45, 18, 26, 61, 42, 47]
         }
       ],
-      lineOptions: {
-        chart: {
-          toolbar: {
-            show: false
-          },
-          zoom: {
-            enabled: false
-          },
-          foreColor: theme.colors.gray[500]
-        },
-        grid: {
-          show: false
-        },
-        dataLabels: {
-          enabled: false
-        },
-        tooltip: {
-          enabled: false
-        },
-        xaxis: {
-          type: 'datetime',
-          axisBorder: {
-            color: theme.colors.gray[600]
-          },
-          axisTicks: {
-            color: theme.colors.gray[500]
-          },
-          categories: [
-            '2021-03-07T00:00:00.0000Z',
-            '2021-03-09T00:00:00.0000Z',
-            '2021-03-12T00:00:00.0000Z',
-            '2021-03-13T00:00:00.0000Z',
-            '2021-03-14T00:00:00.0000Z',
-            '2021-03-15T00:00:00.0000Z',
-            '2021-03-16T00:00:00.0000Z',
-          ]
-        },
-        fill: {
-          opacity: 0.3,
-          type: 'gradient',
-          gradient: {
-            shade: 'dark',
-            opacityFrom: 0.7,
-            opacityTo: 0.3
-          }
-        }
-      },
+      lineOptions: lineOptionsApex,
       treemap: [
         {
           data: [
@@ -581,25 +448,7 @@ export default function Dashboard() {
           ]
         }
       ],
-      treemapOptions: {
-        legend: {
-          show: false
-        },
-        tooltip: {
-          enabled: false
-        },
-
-        chart: {
-          toolbar: {
-            show: false
-          },
-          zoom: {
-            enabled: false
-          },
-          foreColor: theme.colors.gray[500]
-        },
-
-      },
+      treemapOptions: treemapOptionsApex,
       timeline: [
         {
           data: [
@@ -634,33 +483,7 @@ export default function Dashboard() {
           ]
         }
       ],
-      timelineOptions: {
-        legend: {
-          show: false
-        },
-        tooltip: {
-          enabled: false
-        },
-
-        chart: {
-          toolbar: {
-            show: false
-          },
-          zoom: {
-            enabled: false
-          },
-          foreColor: theme.colors.gray[500]
-        },
-
-        plotOptions: {
-          bar: {
-            horizontal: true
-          }
-        },
-        xaxis: {
-          type: 'datetime'
-        }
-      }
+      timelineOptions: timelioneOptions
     }
   }
 
