@@ -29,14 +29,14 @@ export default function Home() {
   return (
     <Flex w='100vw' h='100vh' overflow='hidden'>
 
-      <Flex w='50%' h='100%' justifyContent='center' alignItems='center' >
+      <Flex w={['0%', '50%']} h='100%' justifyContent='center' alignItems='center' >
         <Image
           src='https://inanbruneli.github.io/Parallax/imagens/un (6).svg'
           boxSize={'50%'}
         ></Image>
       </Flex>
 
-      <Flex w='50%' h='100%' bg='gray.800' justifyContent='center' alignItems='center' flexDir='column'>
+      <Flex w={['100%', '50%']} h='100%' bg='gray.800' justifyContent='center' alignItems='center' flexDir='column'>
 
         <Stack spacing='20'>
 

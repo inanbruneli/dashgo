@@ -514,7 +514,7 @@ export default function Dashboard() {
     <Flex direction='column' h='100vh'>
       <Header />
 
-      <Flex justifyContent='flex-end' w='44%'>
+      <Flex justifyContent='center' w='100%' mt={['4', '']}>
 
         <Stack direction='row' spacing='2'>
 
@@ -533,56 +533,65 @@ export default function Dashboard() {
 
         {showChart && (
 
-          <>
-            <SimpleGrid flex='1' gap='4' minChildWidth='320px' alignItems='flex-start'>
+          <Flex flexDir='column' w='100%'>
+
+            <Flex w='100%' justifyContent='space-between' flexDirection='row' wrap={['wrap', 'nowrap']}>
               <Box
+                mt={['6', '0']}
                 p={['6', '8']}
                 bg='gray.800'
                 borderRadius='8'
                 pb='4'
+                w={['100%', '49%']}
               >
                 <Text fontSize='lg' mb='4'>Linhas escritas</Text>
                 <Chart type='area' height='160' options={state.barOptions} series={state.bar} />
               </Box>
 
               <Box
+                mt={['6', '0']}
                 p={['6', '8']}
                 bg='gray.800'
                 borderRadius='8'
                 pb='4'
+                w={['100%', '49%']}
               >
                 <Text fontSize='lg' mb='4'>Tempo no projeto</Text>
 
                 <Chart type='rangeBar' height='160' options={state.timelineOptions} series={state.timeline} />
               </Box>
 
-            </SimpleGrid>
+            </Flex>
 
-            <SimpleGrid flex='1' gap='4' minChildWidth='320px' alignItems='flex-start'>
+            <Flex w='100%' justifyContent='space-between' flexDirection='row' wrap={['wrap', 'nowrap']} mt='6'>
               <Box
+
                 p={['6', '8']}
                 bg='gray.800'
                 borderRadius='8'
                 pb='4'
+                w={['100%', '49%']}
               >
                 <Text fontSize='lg' mb='4'>Bibliotecas utilizadas</Text>
                 <Chart type='treemap' height='160' options={state.treemapOptions} series={state.treemap} />
               </Box>
 
               <Box
+                mt={['6', '0']}
                 p={['6', '8']}
                 bg='gray.800'
                 borderRadius='8'
                 pb='4'
+                w={['100%', '49%']}
               >
                 <Text fontSize='lg' mb='4'>Foco de desenvolvimento</Text>
 
                 <Chart type='line' height='160' options={state.lineOptions} series={state.line} />
               </Box>
 
-            </SimpleGrid>
+            </Flex>
 
-          </>
+          </Flex>
 
 
         )}
